@@ -1,0 +1,26 @@
+name: Deploy Chronicle Rules from Pulls
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  build-and-execute:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11' 
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      
+      - name: Get environment built
+        run: echo ${{ secrets.MAIN_ENV }} | base64 --decode > .env
+
+      - name: Build the Python script
+        run: python -m rule_cli --update-remote-rules
