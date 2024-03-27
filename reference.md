@@ -1,5 +1,7 @@
 # Detection as code pipeline quick links
 
+[Ludus](https://gitlab.com/badsectorlabs/ludus) – A system to build easy-to-use cyber environments, or "ranges" for testing and development
+
 [Detection Framework](https://github.com/the2dl/detection-framework) – A structured resource to build repeatable documentation for detections
 
 [SSDT](https://github.com/the2dl/SSDT) – A tool to run testing against endpoints to generate logs for your logging environment 
